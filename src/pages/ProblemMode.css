@@ -1,0 +1,176 @@
+/* ============================================================
+   PROBLEM MODE — STYLES
+   ============================================================ */
+
+.problem-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-8);
+}
+
+/* TIMER */
+.problem-timer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--glass-subtle);
+  border: 1px solid var(--border-base);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-4) var(--sp-6);
+  flex-wrap: wrap;
+  gap: var(--sp-4);
+}
+
+.problem-timer__display {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  color: var(--text-secondary);
+}
+
+.problem-timer__time {
+  font-size: 1.5rem;
+  font-weight: var(--fw-bold);
+  color: var(--accent-cyan);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: var(--ls-wide);
+}
+
+.problem-timer__progress {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+/* PROBLEM INPUT */
+.problem-input {
+  background: var(--glass-subtle);
+  border: 1px solid var(--border-base);
+  border-radius: var(--radius-xl);
+  padding: var(--sp-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.problem-textarea {
+  width: 100%;
+  min-height: 120px;
+  background: rgba(0,0,0,0.2);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--sp-4);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: var(--fs-body);
+  resize: vertical;
+  line-height: var(--lh-relaxed);
+}
+.problem-textarea:focus {
+  outline: none;
+  border-color: var(--accent-cyan);
+}
+
+/* WORKFLOW */
+.workflow-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  align-items: center;
+  padding: var(--sp-4) 0;
+}
+
+.workflow-node {
+  width: 100%;
+  max-width: 640px;
+  background: var(--glass-subtle);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-4) var(--sp-5);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all var(--duration-base) var(--ease-out);
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+}
+.workflow-node:hover {
+  background: var(--glass-base);
+}
+
+.workflow-node--active {
+  background: var(--glass-elevated);
+  border-color: var(--accent-cyan);
+  box-shadow: var(--shadow-glow);
+}
+
+.workflow-node--completed {
+  border-color: rgba(52, 211, 153, 0.4);
+  opacity: 0.85;
+}
+
+.workflow-node__left {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+}
+
+.workflow-node__number {
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-full);
+  background: var(--glass-base);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: var(--fw-bold);
+  color: var(--text-secondary);
+  flex-shrink: 0;
+}
+
+.workflow-node__title {
+  font-size: var(--fs-small);
+  font-weight: var(--fw-bold);
+  color: var(--text-primary);
+  letter-spacing: var(--ls-wide);
+}
+
+.workflow-connector {
+  width: 2px;
+  height: 16px;
+  background: var(--border-strong);
+}
+
+.workflow-node__notes {
+  width: 100%;
+  max-width: 640px;
+  padding: 0 var(--sp-2);
+}
+
+.workflow-node__notes-input {
+  width: 100%;
+  min-height: 40px;
+  padding: var(--sp-2) var(--sp-3);
+  background: rgba(0,0,0,0.15);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-size: var(--fs-small);
+  font-family: inherit;
+  resize: none;
+}
+.workflow-node__notes-input:focus {
+  outline: none;
+  border-color: var(--accent-cyan);
+}
+
+.assignee-select {
+  background: var(--bg-deepest);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  font-size: var(--fs-meta);
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+}

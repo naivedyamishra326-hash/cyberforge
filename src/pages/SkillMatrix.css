@@ -1,0 +1,192 @@
+/* ============================================================
+   SKILL MATRIX — STYLES
+   ============================================================ */
+
+.matrix-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-6);
+}
+
+.matrix-category {
+  background: var(--glass-subtle);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.matrix-category__header {
+  padding: var(--sp-4) var(--sp-5);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+  transition: background var(--duration-fast) var(--ease-out);
+}
+.matrix-category__header:hover {
+  background: var(--glass-base);
+}
+
+.matrix-category__title {
+  font-size: var(--fs-small);
+  font-weight: var(--fw-semibold);
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-wide);
+}
+
+.matrix-category__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+}
+.matrix-category__gaps {
+  font-size: var(--fs-meta);
+  color: var(--color-warning);
+  background: var(--color-warning-dim);
+  padding: 2px var(--sp-2);
+  border-radius: var(--radius-full);
+}
+
+.matrix-content {
+  border-top: 1px solid var(--border-subtle);
+  background: rgba(0,0,0,0.2);
+}
+
+.matrix-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  padding: var(--sp-3) var(--sp-5);
+  border-bottom: 1px solid var(--border-subtle);
+  align-items: center;
+}
+.matrix-row:last-child {
+  border-bottom: none;
+}
+
+.matrix-row--header {
+  font-size: 10px;
+  font-weight: var(--fw-bold);
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-widest);
+  padding: var(--sp-2) var(--sp-5);
+  background: var(--glass-subtle);
+}
+
+.matrix-skill-name {
+  font-size: var(--fs-small);
+  color: var(--text-primary);
+  font-weight: var(--fw-medium);
+}
+
+.matrix-cell {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+.matrix-cell__text {
+  font-size: var(--fs-meta);
+  color: var(--text-secondary);
+}
+
+/* DRAWER */
+.matrix-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: var(--z-drawer);
+}
+.matrix-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 400px;
+  background: var(--bg-raised);
+  border-left: 1px solid var(--border-strong);
+  z-index: calc(var(--z-drawer) + 1);
+  padding: var(--sp-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-6);
+  box-shadow: var(--shadow-xl);
+}
+
+/* SUMMARY CARDS */
+.matrix-summary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-4);
+}
+
+.matrix-summary__card {
+  background: var(--glass-subtle);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.matrix-summary__name {
+  font-size: var(--fs-small);
+  font-weight: var(--fw-semibold);
+  color: var(--text-secondary);
+}
+
+.matrix-summary__pct {
+  font-size: var(--fs-page);
+  font-weight: var(--fw-bold);
+  line-height: 1;
+}
+
+/* EDITABLE CELL */
+.matrix-cell {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  cursor: pointer;
+  position: relative;
+}
+
+.matrix-cell__edit {
+  opacity: 0;
+  color: var(--text-tertiary);
+  transition: opacity var(--duration-fast);
+}
+.matrix-cell:hover .matrix-cell__edit {
+  opacity: 1;
+}
+
+.matrix-cell__select {
+  background: var(--bg-deepest);
+  border: 1px solid var(--accent-cyan);
+  color: var(--text-primary);
+  font-size: var(--fs-meta);
+  padding: 2px 4px;
+  border-radius: var(--radius-sm);
+  width: 100%;
+}
+
+.matrix-cell__text {
+  font-size: var(--fs-meta);
+  color: var(--text-secondary);
+}
+
+/* FOOTER ROW */
+.matrix-row--footer {
+  background: var(--glass-subtle);
+  border-top: 1px solid var(--border-base);
+}
+
+@media (max-width: 1024px) {
+  .matrix-summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.matrix-skill-name-input { width: 100%; padding: 4px 8px; background: var(--bg-deepest); border: 1px solid var(--accent-cyan); border-radius: var(--radius-sm); color: var(--text-primary); font-size: var(--fs-small); font-family: inherit; } .matrix-skill-name-input:focus { outline: none; }

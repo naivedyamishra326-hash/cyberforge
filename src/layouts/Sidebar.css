@@ -1,0 +1,201 @@
+/* ============================================================
+   SIDEBAR — STYLES
+   ============================================================ */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--sidebar-width);
+  height: 100vh;
+  background: rgba(7, 16, 23, 0.85);
+  backdrop-filter: blur(var(--blur-lg));
+  -webkit-backdrop-filter: blur(var(--blur-lg));
+  border-right: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  z-index: var(--z-sidebar);
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: transform var(--duration-slow) var(--ease-out);
+}
+
+/* ---------- BRAND ---------- */
+
+.sidebar__brand {
+  padding: var(--sp-6) var(--sp-6) var(--sp-5);
+  border-bottom: 1px solid var(--border-subtle);
+  flex-shrink: 0;
+}
+
+.sidebar__logo {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-1);
+}
+
+.sidebar__logo-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-green));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sidebar__logo-icon svg {
+  width: 16px;
+  height: 16px;
+  color: var(--bg-deepest);
+}
+
+.sidebar__logo-text {
+  font-size: var(--fs-body);
+  font-weight: var(--fw-bold);
+  color: var(--text-primary);
+  letter-spacing: var(--ls-wide);
+}
+
+.sidebar__subtitle {
+  font-size: 10px;
+  font-weight: var(--fw-medium);
+  color: var(--text-tertiary);
+  letter-spacing: var(--ls-widest);
+  text-transform: uppercase;
+  margin-top: 2px;
+  padding-left: 41px; /* align with logo text */
+}
+
+/* ---------- NAVIGATION ---------- */
+
+.sidebar__nav {
+  flex: 1;
+  padding: var(--sp-4) var(--sp-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+
+.sidebar__group-label {
+  font-size: 10px;
+  font-weight: var(--fw-semibold);
+  color: var(--text-disabled);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-widest);
+  padding: var(--sp-4) var(--sp-3) var(--sp-2);
+}
+
+.sidebar__group-label:first-child {
+  padding-top: var(--sp-2);
+}
+
+.sidebar__link {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-2) var(--sp-3);
+  border-radius: var(--radius-md);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-regular);
+  color: var(--text-secondary);
+  transition: all var(--duration-fast) var(--ease-out);
+  position: relative;
+  text-decoration: none;
+}
+
+.sidebar__link:hover {
+  color: var(--text-primary);
+  background: var(--glass-subtle);
+}
+
+.sidebar__link--active {
+  color: var(--text-primary);
+  background: var(--glass-base);
+  font-weight: var(--fw-medium);
+}
+
+.sidebar__link--active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 16px;
+  border-radius: 0 var(--radius-full) var(--radius-full) 0;
+  background: var(--accent-cyan);
+}
+
+.sidebar__link-icon {
+  width: 18px;
+  height: 18px;
+  opacity: 0.6;
+  flex-shrink: 0;
+}
+
+.sidebar__link--active .sidebar__link-icon {
+  opacity: 1;
+  color: var(--accent-cyan);
+}
+
+/* ---------- FOOTER ---------- */
+
+.sidebar__footer {
+  padding: var(--sp-4) var(--sp-6);
+  border-top: 1px solid var(--border-subtle);
+  flex-shrink: 0;
+}
+
+.sidebar__footer-row {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: var(--fs-micro);
+  color: var(--text-tertiary);
+  margin-bottom: var(--sp-2);
+}
+
+.sidebar__footer-row:last-child {
+  margin-bottom: 0;
+}
+
+.sidebar__footer-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background: var(--accent-green);
+  flex-shrink: 0;
+}
+
+.sidebar__footer-dot--warning {
+  background: var(--color-warning);
+}
+
+/* ---------- MOBILE OVERLAY ---------- */
+
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: calc(var(--z-sidebar) - 1);
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 1024px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  .sidebar--open {
+    transform: translateX(0);
+  }
+
+  .sidebar-overlay--visible {
+    display: block;
+  }
+}

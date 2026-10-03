@@ -1,0 +1,76 @@
+/* ============================================================
+   ARCHITECTURE — STYLES
+   ============================================================ */
+
+.arch-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-8) 0;
+}
+
+.arch-canvas {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-10);
+}
+
+.arch-node {
+  background: var(--glass-subtle);
+  border: 1px solid var(--border-base);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-4) var(--sp-6);
+  min-width: 200px;
+  text-align: center;
+  font-size: var(--fs-small);
+  font-weight: var(--fw-bold);
+  color: var(--text-primary);
+  letter-spacing: var(--ls-wide);
+  z-index: 2;
+  position: relative;
+}
+
+.arch-node--accent {
+  background: var(--glass-base);
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.1);
+}
+
+.arch-arrow {
+  width: 2px;
+  height: var(--sp-10);
+  background: var(--border-strong);
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+.arch-arrow::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid var(--border-strong);
+}
+
+.arch-row {
+  display: flex;
+  gap: var(--sp-10);
+  position: relative;
+}
+
+.arch-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

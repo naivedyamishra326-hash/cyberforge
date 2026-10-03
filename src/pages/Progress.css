@@ -1,0 +1,142 @@
+/* ============================================================
+   PROGRESS — STYLES
+   ============================================================ */
+
+.progress-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-8);
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-6);
+}
+
+.metric-card {
+  background: var(--glass-subtle);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: var(--sp-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.metric-card__title {
+  font-size: var(--fs-small);
+  font-weight: var(--fw-bold);
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-widest);
+}
+
+.metric-card__value {
+  font-size: 2.5rem;
+  font-weight: var(--fw-bold);
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+/* INDIVIDUAL CARDS */
+.progress-members {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-5);
+}
+
+.progress-member-card {
+  background: var(--glass-subtle);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: var(--sp-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+}
+
+.progress-member-card__header {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.progress-member-card__name {
+  font-size: var(--fs-body);
+  font-weight: var(--fw-bold);
+  color: var(--text-primary);
+}
+
+.progress-member-card__role {
+  font-size: var(--fs-meta);
+  color: var(--text-tertiary);
+}
+
+.progress-member-card__pct {
+  font-size: var(--fs-page);
+  font-weight: var(--fw-bold);
+  margin-left: auto;
+}
+
+.progress-member-card__section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.progress-member-card__label {
+  font-size: 10px;
+  font-weight: var(--fw-bold);
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-widest);
+}
+
+.progress-member-card__bars {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.progress-mini-bar {
+  display: grid;
+  grid-template-columns: 90px 1fr 32px;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.progress-mini-bar__label {
+  font-size: var(--fs-meta);
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.progress-mini-bar__pct {
+  font-size: var(--fs-meta);
+  color: var(--text-tertiary);
+  text-align: right;
+  font-weight: var(--fw-semibold);
+}
+
+.progress-member-card__flaw {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--sp-2) var(--sp-3);
+  background: rgba(251, 191, 36, 0.06);
+  border: 1px solid rgba(251, 191, 36, 0.2);
+  border-radius: var(--radius-md);
+}
+
+.progress-member-card__tasks {
+  padding-top: var(--sp-2);
+  border-top: 1px solid var(--border-subtle);
+}
+
+@media (max-width: 1024px) {
+  .metrics-grid { grid-template-columns: 1fr; }
+  .progress-members { grid-template-columns: 1fr; }
+}

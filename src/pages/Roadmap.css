@@ -1,0 +1,226 @@
+/* ============================================================
+   ROADMAP — STYLES
+   ============================================================ */
+
+.roadmap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-8);
+  height: 100%;
+}
+
+/* ---------- TIMELINE ---------- */
+
+.rm-timeline {
+  display: flex;
+  align-items: stretch;
+  gap: var(--sp-3);
+  overflow-x: auto;
+  padding-bottom: var(--sp-4);
+  scrollbar-width: thin;
+}
+
+.rm-day-card {
+  flex: 0 0 160px;
+  background: var(--glass-subtle);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  cursor: pointer;
+  transition: all var(--duration-base) var(--ease-out);
+  position: relative;
+}
+
+.rm-day-card:hover {
+  background: var(--glass-base);
+  border-color: var(--border-base);
+}
+
+.rm-day-card--active {
+  background: var(--glass-elevated);
+  border-color: var(--border-accent);
+  box-shadow: var(--shadow-glow);
+}
+
+.rm-day-card--past {
+  opacity: 0.6;
+}
+.rm-day-card--past:hover {
+  opacity: 0.8;
+}
+
+.rm-day-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rm-day-card__number {
+  font-size: var(--fs-meta);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-widest);
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+}
+
+.rm-day-card--active .rm-day-card__number {
+  color: var(--accent-cyan);
+}
+
+.rm-day-card__title {
+  font-size: var(--fs-small);
+  font-weight: var(--fw-semibold);
+  color: var(--text-primary);
+  line-height: var(--lh-tight);
+}
+
+.rm-day-card__indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background: var(--border-strong);
+}
+.rm-day-card--active .rm-day-card__indicator {
+  background: var(--accent-cyan);
+  box-shadow: 0 0 8px var(--accent-cyan);
+}
+.rm-day-card--past .rm-day-card__indicator {
+  background: var(--accent-green);
+}
+
+/* ---------- DETAIL PANEL ---------- */
+
+.rm-detail {
+  flex: 1;
+  background: var(--glass-base);
+  border: 1px solid var(--border-base);
+  border-radius: var(--radius-xl);
+  padding: var(--sp-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-8);
+}
+
+.rm-detail__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.rm-detail__day {
+  font-size: var(--fs-small);
+  font-weight: var(--fw-semibold);
+  color: var(--accent-cyan);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-widest);
+}
+
+.rm-detail__title {
+  font-size: var(--fs-page);
+  font-weight: var(--fw-bold);
+  color: var(--text-primary);
+  letter-spacing: var(--ls-tight);
+}
+
+.rm-detail__subtitle {
+  font-size: var(--fs-section);
+  color: var(--text-secondary);
+}
+
+.rm-detail__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-6);
+  margin-top: var(--sp-2);
+}
+
+.rm-detail__meta-item {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: var(--fs-small);
+  color: var(--text-tertiary);
+}
+
+.rm-detail__meta-item svg {
+  color: var(--text-secondary);
+}
+
+.rm-detail__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-8);
+}
+
+.rm-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.rm-section__title {
+  font-size: var(--fs-small);
+  font-weight: var(--fw-semibold);
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-widest);
+}
+
+.rm-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.rm-list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-3);
+  font-size: var(--fs-body);
+  color: var(--text-primary);
+}
+
+.rm-list-item__icon {
+  color: var(--accent-cyan);
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.rm-assignments {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.rm-assign {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-3);
+  background: var(--glass-subtle);
+  border-radius: var(--radius-md);
+}
+
+.rm-assign__role {
+  font-size: var(--fs-meta);
+  font-weight: var(--fw-bold);
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  width: 90px;
+  flex-shrink: 0;
+}
+
+.rm-assign__task {
+  font-size: var(--fs-small);
+  color: var(--text-primary);
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 1024px) {
+  .rm-detail__grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,113 @@
+/* ============================================================
+   TASKS — STYLES
+   ============================================================ */
+
+.tasks-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-8);
+  height: 100%;
+}
+
+.tasks-board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-4);
+  align-items: flex-start;
+}
+
+.task-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.task-col__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: var(--sp-2);
+  border-bottom: 2px solid var(--border-subtle);
+}
+
+.task-col__title {
+  font-size: var(--fs-small);
+  font-weight: var(--fw-bold);
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-widest);
+}
+
+.task-col__count {
+  font-size: var(--fs-meta);
+  color: var(--text-tertiary);
+  background: var(--glass-subtle);
+  padding: 2px var(--sp-2);
+  border-radius: var(--radius-full);
+}
+
+.task-card {
+  background: var(--glass-subtle);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--sp-3) var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  cursor: grab;
+}
+.task-card:active {
+  cursor: grabbing;
+}
+.task-card:hover {
+  background: var(--glass-base);
+  border-color: var(--border-base);
+}
+
+.task-card__title {
+  font-size: var(--fs-small);
+  color: var(--text-primary);
+  line-height: var(--lh-tight);
+}
+
+.task-card__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: var(--sp-1);
+}
+
+.task-card__badges {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.task-badge {
+  font-size: 10px;
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  padding: 2px var(--sp-2);
+  border-radius: var(--radius-full);
+}
+
+.task-badge--high { background: var(--color-danger-dim); color: var(--color-danger); }
+.task-badge--medium { background: var(--color-warning-dim); color: var(--color-warning); }
+.task-badge--low { background: var(--glass-base); color: var(--text-secondary); }
+
+.tasks-hint {
+  text-align: center;
+  padding: var(--sp-1) 0;
+}
+
+@media (max-width: 1024px) {
+  .tasks-board {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .tasks-board {
+    grid-template-columns: 1fr;
+  }
+}
